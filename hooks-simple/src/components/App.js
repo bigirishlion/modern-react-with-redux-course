@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
+import ResourceList from './ResourceList';
 
 const App = () => {
     // destructure array to get value and setter. 
-    const [resourceTypeText, setResourceTypeText] = useState('posts');
+    const [resource, setResource] = useState('posts');
 
     return (
         <div>
             <div>
-                <button onClick={() => setResourceTypeText('posts')}>Posts</button>
-                <button onClick={() => setResourceTypeText('todos')}>Todos</button>
+                <button onClick={() => setResource('posts')}>Posts</button>
+                <button onClick={() => setResource('todos')}>Todos</button>
             </div>
-            {resourceTypeText}
+            <ResourceList resource={resource} />
         </div>
     );
 }
